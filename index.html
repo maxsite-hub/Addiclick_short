@@ -6,6 +6,42 @@
     <title>Addi Click Lace</title>
     <link rel="stylesheet" href="css/style.min.css" />
     <link rel="stylesheet" href="fonts/fonts.css" />
+    <script type="text/javascript">
+      function date() {
+        var d = new Date();
+        var month_num = d.getMonth();
+        var day = d.getDate();
+        month = new Array(
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        );
+
+        if (day <= 9) day = "0" + day;
+
+        date_date =
+          "До " +
+          day +
+          "." +
+          month[month_num] +
+          "." +
+          d.getFullYear();
+        if (document.layers) {
+          document.layers.doc_date.document.write(date_date);
+          document.layers.doc_date.document.close();
+        } else document.getElementById("doc_date").innerHTML = date_date;
+       
+      }
+    </script>
   </head>
   <body>
     <main>
@@ -446,7 +482,7 @@
           <div class="container">
             <h2>
               Акция действует <br />
-              <span class="color-orange"> до 13.11.2020</span>
+              <span class="color-orange" id="doc_date"></span>
             </h2>
           </div>
 
@@ -757,7 +793,9 @@
         </div>
       </section>
     </main>
-
+    <script type="text/javascript">
+      date();
+    </script>
     <script
       src="https://code.jquery.com/jquery-2.2.4.min.js"
       integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
